@@ -1,0 +1,461 @@
+/* Paleta de Cores Elegante */
+:root {
+    --cor-verde-principal: #2E8B57; /* Verde Mar Escuro */
+    --cor-bege: #F5F5DC;          /* Bege para fundos */
+    --cor-off-white: #F8F8F8;     /* Off-white para seções */
+    --cor-cinza-claro: #D3D3D3;   /* Cinza claro para detalhes */
+    --cor-cinza-medio: #808080;   /* Cinza médio para textos */
+    --cor-texto-escuro: #333333;  /* Texto principal */
+    --cor-destaque-sutil: #A0522D; /* Sienna (marrom avermelhado) para pequenos destaques */
+    --sombra-leve: rgba(0, 0, 0, 0.08);
+    --sombra-media: rgba(0, 0, 0, 0.15);
+}
+
+/* Importação de Fontes Formais/Elegantes */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.7;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-off-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+
+/* Cabeçalho (Header) */
+header {
+    /* Degradê de verde escuro para um verde mais claro */
+    background: linear-gradient(135deg, #0A4A0A, #4CAF50);
+    color: var(--cor-off-white);
+    padding: 80px 0 60px;
+    text-align: center;
+    box-shadow: 0 5px 15px var(--sombra-media);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 0;
+}
+
+header .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Navegação (Navbar) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+    font-family: 'Lora', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--cor-bege); /* Logo em bege */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 35px;
+}
+
+nav ul li a {
+    color: var(--cor-off-white);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.05em;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--cor-bege); /* Destaque bege */
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease-out;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: var(--cor-bege);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Conteúdo Principal do Hero */
+.hero-content h1 {
+    font-family: 'Lora', serif;
+    font-size: 3.8em;
+    margin-bottom: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 3px 3px 6px var(--sombra-media);
+}
+
+.hero-content p {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--cor-off-white);
+    opacity: 0.9;
+}
+
+/* Botão Geral */
+.btn {
+    display: inline-block;
+    background-color: var(--cor-destaque-sutil); /* Botão com cor de destaque sutil */
+    color: var(--cor-off-white);
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.15em;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px var(--sombra-leve);
+}
+
+.btn:hover {
+    background-color: #B27B55; /* Um pouco mais claro no hover */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px var(--sombra-media);
+}
+
+/* Seções */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section:nth-of-type(odd) {
+    background-color: var(--cor-off-white); /* Fundo off-white */
+}
+
+section:nth-of-type(even) {
+    background-color: var(--cor-bege); /* Fundo bege */
+}
+
+section h2 {
+    font-family: 'Lora', serif;
+    font-size: 2.8em;
+    color: var(--cor-verde-principal); /* Títulos em verde principal */
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+    width: 80px;
+    height: 4px;
+    background-color: var(--cor-destaque-sutil); /* Sublinhado com destaque sutil */
+    border-radius: 2px;
+}
+
+section p {
+    font-size: 1.15em;
+    max-width: 850px;
+    margin: 0 auto 20px;
+    color: var(--cor-texto-escuro);
+}
+
+/* Seção Sobre (A Conexão) */
+.about-section {
+    background-color: var(--cor-bege); /* Fundo bege */
+    padding-bottom: 80px;
+}
+
+.about-section .content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 50px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.about-section img {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px var(--sombra-media);
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.about-section img:hover {
+    transform: scale(1.02);
+}
+
+.about-section .text-content {
+    flex: 1.5;
+    min-width: 300px;
+}
+
+.about-section .text-content h2 {
+    text-align: left;
+    font-size: 2.4em;
+    margin-bottom: 25px;
+    color: var(--cor-verde-principal); /* Título em verde principal */
+}
+
+.about-section .text-content h2::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+.about-section .text-content p {
+    margin-bottom: 15px;
+    font-size: 1.05em;
+    color: var(--cor-texto-escuro);
+}
+
+/* Seção de Benefícios */
+.benefits-section {
+    background-color: var(--cor-off-white); /* Fundo off-white */
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.benefit-item {
+    background-color: var(--cor-bege); /* Fundo do card em bege */
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px var(--sombra-leve);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 4px solid var(--cor-verde-principal); /* Linha de destaque verde */
+}
+
+.benefit-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px var(--sombra-media);
+}
+
+.benefit-item h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.7em;
+    color: var(--cor-destaque-sutil); /* Título do benefício com destaque sutil */
+    margin-bottom: 15px;
+}
+
+.benefit-item p {
+    font-size: 1em;
+    color: var(--cor-cinza-medio); /* Texto do card em cinza médio */
+    margin-bottom: 0;
+}
+
+/* Seção Agrinho (Destaque) */
+.agrinho-section {
+    background: linear-gradient(45deg, var(--cor-verde-principal), #4CAF50); /* Degradê verde principal para verde mais claro */
+    color: var(--cor-off-white);
+    padding: 90px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.agrinho-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 0;
+}
+
+.agrinho-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.agrinho-section h2 {
+    color: var(--cor-bege); /* Título em bege */
+}
+
+.agrinho-section h2::after {
+    background-color: var(--cor-off-white); /* Sublinhado off-white */
+}
+
+.agrinho-section p {
+    color: var(--cor-off-white);
+    opacity: 0.95;
+}
+
+.agrinho-section .btn {
+    background-color: var(--cor-off-white);
+    color: var(--cor-verde-principal);
+    margin-top: 30px;
+}
+
+.agrinho-section .btn:hover {
+    background-color: var(--cor-bege);
+    color: var(--cor-verde-principal);
+}
+
+/* Rodapé (Footer) */
+footer {
+    background-color: var(--cor-texto-escuro); /* Fundo escuro */
+    color: var(--cor-off-white);
+    padding: 40px 0;
+    text-align: center;
+    font-size: 0.9em;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 5px 0;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 3em;
+    }
+
+    nav ul li {
+        margin-left: 25px;
+    }
+
+    .about-section .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-section .text-content h2,
+    .about-section .text-content h2::after {
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+
+    nav ul {
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 12px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    section h2 {
+        font-size: 2.2em;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-item {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .about-section img {
+        width: 100%;
+        max-width: 450px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    .logo {
+        font-size: 1.8em;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p, section p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+
+    section h2 {
+        font-size: 1.9em;
+    }
+
+    .benefit-item h3 {
+        font-size: 1.5em;
+    }
+}
